@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
@@ -8,16 +9,17 @@
     "pg": "^8.16.3"
   },
   "devDependencies": {
+    "cross-env": "^10.1.0",
     "nodemon": "^3.1.11"
   },
   "name": "todo_be",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-"scripts": {
-  "start": "node index.js",
-  "dev": "nodemon index.js"
-},
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon src/server.js",
+    "start": "cross-env NODE_ENV=production node src/server.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
